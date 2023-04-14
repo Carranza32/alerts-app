@@ -1,4 +1,8 @@
 import 'package:alerts_app/src/providers/app_provider.dart';
+import 'package:alerts_app/src/screens/alert_list_screen.dart';
+import 'package:alerts_app/src/screens/home_screen.dart';
+import 'package:alerts_app/src/widgets/drawer_widget.dart';
+import 'package:alerts_app/src/widgets/navigation_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,49 +12,25 @@ class TabsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const DrawerWidget(),
       appBar: AppBar(
-        title: const Text('Material App Bar'),
+        title: const Text('Alertas App'),
       ),
       body: _Pages(),
-      bottomNavigationBar: _Navigation(),
-    );
-  }
-}
-
-class _Navigation extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    final provider = Provider.of<AppProvider>(context);
-
-    return BottomNavigationBar(
-      currentIndex: provider.currentTab,
-      onTap: (i) => provider.currentTab = i,
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home_rounded),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.notification_important_rounded),
-          label: 'Search',
-        ),
-      ],
+      bottomNavigationBar: const NavigationWidget(),
     );
   }
 }
 
 class _Pages extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return PageView(
       controller: Provider.of<AppProvider>(context).pageController,
       physics: const NeverScrollableScrollPhysics(),
       children: const [
-        Center(child: Text('Page 1')),
-        Center(child: Text('Page 2')),
-        Center(child: Text('Page 3')),
+        HomeScreen(),
+        AlertListScreen(),
       ],
     );
   }
