@@ -9,4 +9,12 @@ class AuthProvider with ChangeNotifier {
     _user = user;
     notifyListeners();
   }
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  login({required String email, required String password}) {
+    _user = user;
+    notifyListeners();
+  }
 }
