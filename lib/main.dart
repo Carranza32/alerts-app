@@ -24,23 +24,20 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
         theme: ThemeData(
-          useMaterial3: false,
           brightness: Brightness.light,
-          colorSchemeSeed: Colors.green[700],
         ),
         darkTheme: ThemeData(
-          useMaterial3: false,
           brightness: Brightness.dark,
-          colorSchemeSeed: Colors.green[700],
         ),
         routes: {
           '/tab': (context) => const TabsScreen(),
           '/detail': (context) => const DetailScreen(),
-          '/login': (context) => const LoginScreen(),
+          '/login': (context) => LoginScreen(),
           '/signup': (context) => const RegisterScreen(),
           '/recuperation': (context) => const RecuperationScreen(),
+          '/welcome': (context) => const WelcomeScreen(),
         },
-        initialRoute: '/tab',
+        initialRoute: '/welcome',
       ),
     );
   }

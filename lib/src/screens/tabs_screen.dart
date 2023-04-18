@@ -17,6 +17,7 @@ class TabsScreen extends StatelessWidget {
       drawer: const DrawerWidget(),
       appBar: AppBar(
         title: const Text('Alerts App'),
+        elevation: 4,
         actions: [
           IconButton(
             icon: const Icon(Icons.sort_rounded),
