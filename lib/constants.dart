@@ -1,36 +1,47 @@
 import 'package:flutter/material.dart';
 
+const kPrimaryColor = Color(0xFF6F35A5);
+const kPrimaryLightColor = Color(0xFFF1E6FF);
+
+const double defaultPadding = 16.0;
+
 TextStyle loginTitleStyle() => const TextStyle(
   fontSize: 26,
   fontWeight: FontWeight.w600,
   color: Colors.black,
 );
 
-InputDecoration authFormFieldStyle() => const InputDecoration(
-	labelText: 'Email Address',
-  hintText: 'Enter your email...',
-  filled: true,
-  fillColor: Color(0xfff4f4f4),
-  prefixIconColor: Color.fromARGB(255, 164, 167, 170),
-  border: OutlineInputBorder(
-		borderRadius: BorderRadius.all(Radius.circular(50)),
+InputDecorationTheme authFormFieldTheme() => const InputDecorationTheme(
+	filled: true,
+	fillColor: kPrimaryLightColor,
+	iconColor: kPrimaryColor,
+	prefixIconColor: kPrimaryColor,
+	contentPadding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding),
+	border: OutlineInputBorder(
+		borderRadius: BorderRadius.all(Radius.circular(30)),
+		borderSide: BorderSide.none,
 	),
+);
 
-  enabledBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Color(0xffe0e3e7), width: 1.0),
-    borderRadius: BorderRadius.all(Radius.circular(50)),
+ElevatedButtonThemeData authButtonTheme() => ElevatedButtonThemeData(
+	style: ElevatedButton.styleFrom(
+		elevation: 0,
+		backgroundColor: kPrimaryColor,
+		shape: const StadiumBorder(),
+		maximumSize: const Size(double.infinity, 56),
+		minimumSize: const Size(double.infinity, 56),
+	),
+);
+
+AppBarTheme appBarTheme() => AppBarTheme(
+  color: Colors.white,
+  elevation: 0,
+  brightness: Brightness.light,
+  iconTheme: const IconThemeData(color: Colors.black),
+  textTheme: const TextTheme(
+	 headline6: TextStyle(
+		color: Colors.black,
+		fontSize: 18,
+	 ),
   ),
-  focusedBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Color(0x00000000), width: 1.0),
-    borderRadius: BorderRadius.all(Radius.circular(50)),
-  ),
-  errorBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Color.fromARGB(255, 239, 57, 57), width: 1.0),
-    borderRadius: BorderRadius.all(Radius.circular(50)),
-  ),
-  focusedErrorBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Color.fromARGB(255, 239, 57, 57), width: 1.0),
-    borderRadius: BorderRadius.all(Radius.circular(50)),
-  ),
-  
 );

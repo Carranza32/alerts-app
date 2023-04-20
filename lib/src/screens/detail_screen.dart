@@ -9,7 +9,7 @@ class DetailScreen extends StatelessWidget {
 		appBar: AppBar(
 			title: const Text('Detail'),
 		),
-		body: Center(
+		body: const Center(
 			child: Text('Detail'),
 		),
 	 );

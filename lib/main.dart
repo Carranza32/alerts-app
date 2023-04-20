@@ -2,9 +2,11 @@ import 'package:alerts_app/src/providers/api_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:alerts_app/src/providers/app_provider.dart';
 import 'package:alerts_app/src/providers/auth_provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:alerts_app/src/screens/auth/index.dart';
 import 'package:alerts_app/src/screens/index.dart';
+import 'package:alerts_app/constants.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,6 +15,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AppProvider()),
@@ -24,7 +28,14 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
         theme: ThemeData(
+          colorSchemeSeed: kPrimaryColor,
+          scaffoldBackgroundColor: Colors.white,
+          elevatedButtonTheme: authButtonTheme(),
+          inputDecorationTheme: authFormFieldTheme(),
+          appBarTheme: appBarTheme(),
           brightness: Brightness.light,
+          useMaterial3: true,
+          textTheme: GoogleFonts.robotoTextTheme(),
         ),
         darkTheme: ThemeData(
           brightness: Brightness.dark,
@@ -32,8 +43,8 @@ class MyApp extends StatelessWidget {
         routes: {
           '/tab': (context) => const TabsScreen(),
           '/detail': (context) => const DetailScreen(),
-          '/login': (context) => LoginScreen(),
-          '/signup': (context) => const RegisterScreen(),
+          '/login': (context) => const LoginScreen(),
+          '/signup': (context) => const SignUpScreen(),
           '/recuperation': (context) => const RecuperationScreen(),
           '/welcome': (context) => const WelcomeScreen(),
         },

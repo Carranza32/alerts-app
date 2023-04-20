@@ -15,7 +15,7 @@ class AlertListScreen extends StatelessWidget {
 				preferredSize: const Size.fromHeight(64.0),
 				child: Container(
 					alignment: Alignment.centerLeft,
-					padding: const EdgeInsets.only(left: 16, bottom: 10, right: 16),
+					padding: const EdgeInsets.only(left: 16, bottom: 10, right: 16, top: 20),
 					child: const TextField(
 					decoration: InputDecoration(
 						isDense: true,

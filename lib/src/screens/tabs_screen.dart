@@ -14,30 +14,9 @@ class TabsScreen extends StatelessWidget {
     final provider = Provider.of<AppProvider>(context);
 
     return Scaffold(
-      drawer: const DrawerWidget(),
+      // drawer: const DrawerWidget(),
       appBar: AppBar(
         title: const Text('Alerts App'),
-        elevation: 4,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.sort_rounded),
-            isSelected: provider.isFilterActive,
-            onPressed: () => provider.isFilterActive = !provider.isFilterActive,
-          ),
-          PopupMenuButton(
-            itemBuilder: (context) => [
-              const PopupMenuItem(
-                child: Text('About us'),
-              ),
-              const PopupMenuItem(
-                child: Text('Privacy Policy'),
-              ),
-              const PopupMenuItem(
-                child: Text('Settings'),
-              ),
-            ],
-          ),
-        ],
       ),
       body: _Pages(),
       bottomNavigationBar: const NavigationWidget(),
