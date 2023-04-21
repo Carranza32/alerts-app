@@ -4,7 +4,7 @@ class AppProvider with ChangeNotifier {
   final PageController _pageController = PageController(initialPage: 0);
   PageController get pageController => _pageController;
 
-  int _currentTab = 0;
+  int _currentTab = 1;
   int get currentTab => _currentTab;
 
   set currentTab(int index) {

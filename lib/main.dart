@@ -28,12 +28,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
         theme: ThemeData(
-          colorSchemeSeed: kPrimaryColor,
-          scaffoldBackgroundColor: Colors.white,
+          colorSchemeSeed: const Color(0xff835500),
+          scaffoldBackgroundColor: const Color(0xffebe5d9),
           elevatedButtonTheme: authButtonTheme(),
           inputDecorationTheme: authFormFieldTheme(),
           appBarTheme: appBarTheme(),
-          brightness: Brightness.light,
           useMaterial3: true,
           textTheme: GoogleFonts.robotoTextTheme(),
         ),
@@ -48,7 +47,7 @@ class MyApp extends StatelessWidget {
           '/recuperation': (context) => const RecuperationScreen(),
           '/welcome': (context) => const WelcomeScreen(),
         },
-        initialRoute: '/welcome',
+        initialRoute: '/tab',
       ),
     );
   }

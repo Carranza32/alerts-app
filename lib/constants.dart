@@ -33,15 +33,9 @@ ElevatedButtonThemeData authButtonTheme() => ElevatedButtonThemeData(
 	),
 );
 
-AppBarTheme appBarTheme() => AppBarTheme(
-  color: Colors.white,
-  elevation: 0,
-  brightness: Brightness.light,
-  iconTheme: const IconThemeData(color: Colors.black),
-  textTheme: const TextTheme(
-	 headline6: TextStyle(
-		color: Colors.black,
-		fontSize: 18,
-	 ),
-  ),
+AppBarTheme appBarTheme() => const AppBarTheme(
+  elevation: 4,
+  centerTitle: true,
+  iconTheme: IconThemeData(color: Colors.black),
+  backgroundColor: Color(0xffebe5d9),
 );

@@ -13,13 +13,28 @@ class TabsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<AppProvider>(context);
 
-    return Scaffold(
-      // drawer: const DrawerWidget(),
-      appBar: AppBar(
-        title: const Text('Alerts App'),
+    return SafeArea(
+      child: Scaffold(
+        // drawer: const DrawerWidget(),
+        appBar: AppBar(
+          title: const Text('Alerts App'),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.more_vert),
+              onPressed: () {
+
+              },
+            )
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){},
+          backgroundColor: const Color(0xffcdecb7),
+          child: const Icon(Icons.notification_add_outlined),
+        ),
+        body: _Pages(),
+        bottomNavigationBar: const NavigationWidget(),
       ),
-      body: _Pages(),
-      bottomNavigationBar: const NavigationWidget(),
     );
   }
 }
