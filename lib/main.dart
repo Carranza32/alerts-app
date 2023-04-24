@@ -15,8 +15,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AppProvider()),
@@ -41,7 +39,6 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           '/tab': (context) => const TabsScreen(),
-          '/detail': (context) => const DetailScreen(),
           '/login': (context) => const LoginScreen(),
           '/signup': (context) => const SignUpScreen(),
           '/recuperation': (context) => const RecuperationScreen(),

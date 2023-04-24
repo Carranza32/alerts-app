@@ -20,7 +20,7 @@ class TabsScreen extends StatelessWidget {
           title: const Text('Alerts App'),
           actions: [
             IconButton(
-              icon: Icon(Icons.more_vert),
+              icon: const Icon(Icons.more_vert),
               onPressed: () {
 
               },
